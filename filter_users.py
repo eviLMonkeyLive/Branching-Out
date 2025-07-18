@@ -74,7 +74,10 @@ if __name__ == "__main__":
         filter_users_by_name(name_to_search)
     elif filter_option == "age":
         age_to_search = input("Enter an age to filter users: ").strip()
-        filter_by_age(int(age_to_search))
+        if age_to_search.isdigit():
+            filter_by_age(int(age_to_search))
+        else:
+            print("Invalid input: please enter a number next time.")
     elif filter_option == "email":
         email_to_search = input("Enter an email to filter users: ").strip()
         filter_by_email(email_to_search)
